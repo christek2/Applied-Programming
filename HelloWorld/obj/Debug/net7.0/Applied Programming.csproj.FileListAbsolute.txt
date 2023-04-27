@@ -1,0 +1,15 @@
+C:\Users\kimba\Downloads\Applied Programming\HelloWorld\bin\Debug\net7.0\Applied Programming.exe
+C:\Users\kimba\Downloads\Applied Programming\HelloWorld\bin\Debug\net7.0\Applied Programming.deps.json
+C:\Users\kimba\Downloads\Applied Programming\HelloWorld\bin\Debug\net7.0\Applied Programming.runtimeconfig.json
+C:\Users\kimba\Downloads\Applied Programming\HelloWorld\bin\Debug\net7.0\Applied Programming.dll
+C:\Users\kimba\Downloads\Applied Programming\HelloWorld\bin\Debug\net7.0\Applied Programming.pdb
+C:\Users\kimba\Downloads\Applied Programming\HelloWorld\obj\Debug\net7.0\Applied Programming.csproj.AssemblyReference.cache
+C:\Users\kimba\Downloads\Applied Programming\HelloWorld\obj\Debug\net7.0\Applied Programming.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kimba\Downloads\Applied Programming\HelloWorld\obj\Debug\net7.0\Applied Programming.AssemblyInfoInputs.cache
+C:\Users\kimba\Downloads\Applied Programming\HelloWorld\obj\Debug\net7.0\Applied Programming.AssemblyInfo.cs
+C:\Users\kimba\Downloads\Applied Programming\HelloWorld\obj\Debug\net7.0\Applied Programming.csproj.CoreCompileInputs.cache
+C:\Users\kimba\Downloads\Applied Programming\HelloWorld\obj\Debug\net7.0\Applied Programming.dll
+C:\Users\kimba\Downloads\Applied Programming\HelloWorld\obj\Debug\net7.0\refint\Applied Programming.dll
+C:\Users\kimba\Downloads\Applied Programming\HelloWorld\obj\Debug\net7.0\Applied Programming.pdb
+C:\Users\kimba\Downloads\Applied Programming\HelloWorld\obj\Debug\net7.0\Applied Programming.genruntimeconfig.cache
+C:\Users\kimba\Downloads\Applied Programming\HelloWorld\obj\Debug\net7.0\ref\Applied Programming.dll
