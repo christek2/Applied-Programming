@@ -2,7 +2,7 @@
 
 {Important!  Do not say in this section that this is college assignment.  Talk about what you are trying to accomplish as a software engineer to further your learning.}
 
-{Provide a description of the data set that you are analyzing.  Include the link of where you obtained the data.}
+{Provide a description of the data set that you are analyzing.  Include the link of where you obtained the data.} https://www.kaggle.com/datasets/rounakbanik/pokemon?select=pokemon.csv
 
 {Describe your purpose for writing this software to analyze the data.}
 
@@ -13,6 +13,8 @@
 # Data Analysis Results
 
 {List the questions and the answers you found by doing this analysis.}
+Which five pokemon have the highest attack to defense ratio?
+Which pokemon have the highest BMI? (weight in kg/ height^2 in m)
 
 # Development Environment
 
