@@ -70,24 +70,76 @@ def bmi_analysis():
     print()
 
 
-ds = pd.read_csv("Data Files/pokemon_data.csv", usecols= ["name", "attack", "defense"])
-ds["Att/Def Ratio"] = round(ds["attack"] / ds["defense"], 1)
+ds = pd.read_csv("Data Files/pokemon_data.csv", usecols= ["name", "type1", "attack", "defense"])
+ds["att/def ratio"] = round(ds["attack"] / ds["defense"], 1)
 
 ratio_count = 0
 ratio_total = 0
 for obj_ratio in ds.iterrows():
-    ratio_total = ratio_total + float(obj_ratio[1][3])
+    ratio_total = ratio_total + float(obj_ratio[1][4])
     ratio_count = ratio_count + 1
 ratio_avg = round(ratio_total / ratio_count, 1)
 
-# find the percent above, at, and below avg
+above_ratio = 0
+at_ratio = 0
+under_ratio = 0
+for rat in ds.iterrows():
+    rat = float(rat[1][4])
+    if rat > ratio_avg:
+        above_ratio = above_ratio + 1
+    elif rat == ratio_avg:
+        at_ratio = at_ratio + 1
+    elif rat < ratio_avg:
+        under_ratio = under_ratio + 1
+
+rock_count = 0
+rock_total = 0
+bug_count = 0
+bug_total = 0
+for obj_type in ds.iterrows():
+    type1 = str(obj_type[1][1])
+    ratio_obj = float(obj_type[1][4])
+    if type1 == "rock":
+        rock_count = rock_count + 1
+        rock_total = rock_total + ratio_obj
+    elif type1 == "bug":
+        bug_count = bug_count + 1
+        bug_total = bug_total + ratio_obj
+rock_avg = rock_total / rock_count
+bug_avg = bug_total / bug_count
+
+type_list = []
+for item in ds.iterrows():
+    if item[1][1] not in type_list:
+        type_list.append(str(item[1][1]))
+
+type_ratio_list = []
+type_count = 0
+type_ratio_total = 0
+type_list = sorted(type_list)
+for i in type_list:
+    for type in ds.iterrows():
+        if type[1][1] == i:
+            type_count = type_count + 1
+            type_ratio_total = type_ratio_total + float(type[1][4])
+    type_ratio = round(type_ratio_total / type_count, 1)
+    type_ratio_list.append(f"{type_ratio} - {i}")
+    type_count = 0
+    type_ratio_total = 0
 
 def ratio_analysis():
-    print()
+    os.system('CLS')
     print('Top 10 Pokemon Ranked by Their Attack To Defense Ratio (First 7 Generations):')
     print()
-    print(ds.sort_values("Att/Def Ratio", ascending = False).head(20))
+    print(ds.sort_values("att/def ratio", ascending = False).head(10))
     print()
+    print(f'The average attack to defense ratio is {ratio_avg}. {round(above_ratio / ratio_count * 100, 2)}% ({above_ratio}) are above average and {round(under_ratio / ratio_count * 100, 2)}% ({under_ratio}) are under average, while only {round(at_ratio / ratio_count * 100, 2)}% ({at_ratio}) are at the average. ')
+    print()
+    print(f"Common types in these highest att/def ratios are rock(3) and bug(2), but both have an average ratio of {round(rock_avg, 1)} across their respective types.")
+    print()
+    print("Here are the average att/def ratios across type:")
+    for j in sorted(type_ratio_list, reverse= True):
+        print(j)
     print()
 
 # bmi_analysis()
