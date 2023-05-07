@@ -145,10 +145,31 @@ def ratio_analysis():
     print()
 
 dt = pd.read_csv("Data Files/pokemon_data.csv", usecols= ["name", "percentage_male", "is_legendary", "generation"])
+dt = dt[dt["is_legendary"] == 1].sort_values("percentage_male", ascending= False)
+
+male_count = 0
+female_count = 0
+either_count = 0
+for legend in dt.iterrows():
+    if float(legend[1][1]) == 100.0:
+        male_count = male_count + 1
+    elif float(legend[1][1]) == 0:
+        female_count = female_count + 1
+    elif float(legend[1][1]) == 50.0:
+        either_count = either_count + 1
+            
 
 def legendary_analysis():
     os.system('CLS')
-    print(dt[dt["is_legendary"] == 1].sort_values("percentage_male", ascending= False))
+    print(dt.head(7))
+    print()
+    print("Legendary pokemon are known for being unique and usually genderless, however, these 7 legendary pokemon can be gendered.")
+    print()
+    print(f"Of these 7 legendary pokemon, {round(male_count / 7 * 100, 2)}% ({male_count}) are always male, {round(female_count / 7 * 100, 2)}% ({female_count}) are always female, and {round(either_count / 7 * 100, 2)}% ({either_count}) have equal chances of appearing at either one.")
+    print()
+    print("None of these gendered legendaries are from the first 2 generations or the last two generations where we have data. 3 out of the 4 that can only be male are from the 5th generation.")
+    print()
+
 
 # bmi_analysis()
 # ratio_analysis()
