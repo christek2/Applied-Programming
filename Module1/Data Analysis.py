@@ -141,6 +141,15 @@ def ratio_analysis():
     for j in sorted(type_ratio_list, reverse= True):
         print(j)
     print()
+    print("Since this metric measures the ratio of attack points to defense points, it is no surprise that the fighting type has the highest average ratio (they are geared more towards attacks) and that steel has the lowest (geared more towards defense).")
+    print()
+
+dt = pd.read_csv("Data Files/pokemon_data.csv", usecols= ["name", "percentage_male", "is_legendary", "generation"])
+
+def legendary_analysis():
+    os.system('CLS')
+    print(dt[dt["is_legendary"] == 1].sort_values("percentage_male", ascending= False))
 
 # bmi_analysis()
-ratio_analysis()
+# ratio_analysis()
+legendary_analysis()
