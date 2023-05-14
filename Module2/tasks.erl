@@ -1,8 +1,10 @@
 -module(tasks).
+
 -export([print_my_name/0]).
 -export([print_my_bday/0]).
 -export([lam_prac/0]).
--export([pattern_match/0]).
+-export([pattern_match/1]).
+-export([rec_prac/0]).
 % -export([get_data/0]).
 % -export([handle_message/1]).
 
@@ -12,16 +14,24 @@ lam_prac() ->
     F = fun(X) -> 2*X end,
     F(16).
 
-pattern_match() ->
-    {ok, Type} = io:read("What type of shape do you have? \n"),
-    io:format("The shape you entered is: ~w~n",
-    [Type]),
+pattern_match(Type) ->
 
     case Type of
-        circle -> io:fwrite("false \n");
-        square -> io:fwrite("true \n")
-    end.
+        circle -> 
+            {ok, Radius} = io:read("What is the radius of the circle? "),
+            A = Radius * 3.1415;
+        square -> 
+            {ok, Side} = io:read("What is the length of the sides? "),
+            A = Side * Side;
+        rectangle ->
+            {ok, Side1} = io:read("What is the length of the shorter side? "),
+            {ok, Side2} = io:read("What is the length of the longer side? "),
+            A = Side1 * Side2
+    end,
+    io:format("The area is ~w~n", [A]).
 
+rec_prac() ->
+    io:fwrite("list here").
 % get_data() ->
 %     {ok, Term} = io:read("Enter a number: "),
 %     io:format("The number you entered plus one is: ~w~n", 
