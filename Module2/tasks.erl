@@ -5,6 +5,8 @@
 -export([lam_prac/0]).
 -export([pattern_match/1]).
 -export([rec_prac/0]).
+-export([start/0]).
+-export([do_loop/1]).
 % -export([get_data/0]).
 % -export([handle_message/1]).
 
@@ -31,7 +33,25 @@ pattern_match(Type) ->
     io:format("The area is ~w~n", [A]).
 
 rec_prac() ->
-    io:fwrite("list here").
+    List1 = [1, 2, 3, 4, 5],
+    io:fwrite("~w~n", [List1]).
+
+start() -> 
+    A = 5, 
+    B = 6, 
+    
+    if 
+        A == B -> 
+            io:fwrite("True"); 
+        true -> 
+            io:fwrite("True") 
+    end.
+
+do_loop(Count) -> 
+    io:fwrite("~w~n", [Count]),
+    do_loop(Count -1).
+
+
 % get_data() ->
 %     {ok, Term} = io:read("Enter a number: "),
 %     io:format("The number you entered plus one is: ~w~n", 
