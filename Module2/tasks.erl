@@ -4,10 +4,8 @@
 -export([print_my_bday/0]).
 -export([lam_prac/0]).
 -export([pattern_match/1]).
--export([rec_prac/0]).
--export([start/0]).
--export([do_loop/1]).
-% -export([get_data/0]).
+-export([info_sheet/0]).
+-export([get_data/0]).
 % -export([handle_message/1]).
 
 print_my_name() -> io:fwrite("My name is Kimball Christensen \n").
@@ -32,30 +30,27 @@ pattern_match(Type) ->
     end,
     io:format("The area is ~w~n", [A]).
 
-rec_prac() ->
-    List1 = [1, 2, 3, 4, 5],
-    io:fwrite("~w~n", [List1]).
+info_sheet() ->
+    {ok, Fname} = io:read("What is your first name? "),
+    % {ok, Lname} = io:read("What is your last name? "),
+    % {ok, Number} = 1,
+    % {ok, Bdate} = io:read("What is your birthday? (--/--/----) "),
+    % {ok, Phone} = io:read("What is your phone number? "),
+    % {ok, Email} = io:read("What is your email address? "),
+    % {ok, EmerCont} = io:read("Who is your emergency contact? "),
+    % {ok, ECPhone} = io:read("What is their phone number? "),
+    % {ok, Allergies} = io:read("List your allergies here (type 'quit' to stop typing): "),
 
-start() -> 
-    A = 5, 
-    B = 6, 
-    
-    if 
-        A == B -> 
-            io:fwrite("True"); 
-        true -> 
-            io:fwrite("True") 
-    end.
+    % PersonalInfo = [{"Fname", Fname}, {"Lname", Lname}, {"Number", Number}, {"Bdate", Bdate}, {"Phone", Phone}, {"Email", Email}, {"EmerCont", EmerCont}, {"ECPhone", ECPhone}, {"Allergies", Allergies}],
+    % io:fwrite(PersonalInfo).
 
-do_loop(Count) -> 
-    io:fwrite("~w~n", [Count]),
-    do_loop(Count -1).
+    io:format("~w~n", [Fname]).
 
 
-% get_data() ->
-%     {ok, Term} = io:read("Enter a number: "),
-%     io:format("The number you entered plus one is: ~w~n", 
-%                 [Term + 1]).
+get_data() ->
+    {ok, Term} = io:read("Enter a number: "),
+    io:format("The number you entered plus one is: ~w~n", 
+                [Term + 1]).
 
 % handle_message({get_user, UserId}) ->
 %     {ok, User} = database:get_user(UserId), 
