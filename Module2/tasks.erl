@@ -1,21 +1,26 @@
 -module(tasks).
 
--export([print_my_name/0]).
--export([print_my_bday/0]).
--export([lam_prac/0]).
--export([pattern_match/1]).
--export([info_sheet/0]).
--export([get_data/0]).
-% -export([handle_message/1]).
+-export([list_filter/0]).
+-export([pattern_match/0]).
 
-print_my_name() -> io:fwrite("My name is Kimball Christensen \n").
-print_my_bday() -> io:fwrite("My birthday is 11/14/2023 ").
-lam_prac() -> 
-    F = fun(X) -> 2*X end,
-    F(16).
+% This function just gets the input from the user and passes it to the filter application function.
+list_filter() -> 
+    io:format("Here's a list of numbers 1 through 100. Pick a number that you want to find multiples for. \n"),
+    {ok, Input} = io:read("For what number do you want to find multiples? \n> "),
+    find_numbers(Input).
 
-pattern_match(Type) ->
+% This function is the one used to actually apply the filter. If there is the need to add a recursive element to a software, for instance,
+% if the user wants to try again and input a different filter on the list, then this is the function to recall.
+find_numbers(Number) ->
+    List1 = lists:seq(1, 100),
+    F = fun(X) -> X rem Number == 0 end,
+    io:format("Numbers 1 through 100 that are multiples of ~w: ", [Number]),
+    lists:filter(F, List1).
 
+% This is my pattern matching function. It directs the different shape choices of the user towards their specific formula for calculating
+% area and then directs that to the string output displaying the calculated formula.
+pattern_match() ->
+    {ok, Type} = io:read("What type of shape do you have? (circle/square/rectangle) \n> "),
     case Type of
         circle -> 
             {ok, Radius} = io:read("What is the radius of the circle? "),
@@ -29,30 +34,3 @@ pattern_match(Type) ->
             A = Side1 * Side2
     end,
     io:format("The area is ~w~n", [A]).
-
-info_sheet() ->
-    {ok, Fname} = io:read("What is your first name? "),
-    % {ok, Lname} = io:read("What is your last name? "),
-    % {ok, Number} = 1,
-    % {ok, Bdate} = io:read("What is your birthday? (--/--/----) "),
-    % {ok, Phone} = io:read("What is your phone number? "),
-    % {ok, Email} = io:read("What is your email address? "),
-    % {ok, EmerCont} = io:read("Who is your emergency contact? "),
-    % {ok, ECPhone} = io:read("What is their phone number? "),
-    % {ok, Allergies} = io:read("List your allergies here (type 'quit' to stop typing): "),
-
-    % PersonalInfo = [{"Fname", Fname}, {"Lname", Lname}, {"Number", Number}, {"Bdate", Bdate}, {"Phone", Phone}, {"Email", Email}, {"EmerCont", EmerCont}, {"ECPhone", ECPhone}, {"Allergies", Allergies}],
-    % io:fwrite(PersonalInfo).
-
-    io:format("~w~n", [Fname]).
-
-
-get_data() ->
-    {ok, Term} = io:read("Enter a number: "),
-    io:format("The number you entered plus one is: ~w~n", 
-                [Term + 1]).
-
-% handle_message({get_user, UserId}) ->
-%     {ok, User} = database:get_user(UserId), 
-%     io:format("User ~p~n", [User]),
-%     {reply, User}.
