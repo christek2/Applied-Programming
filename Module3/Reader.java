@@ -11,7 +11,7 @@ import java.util.Random;
 
 public class Reader {
     public static void main(String[] args) {
-        System.out.println(populate(1));
+        System.out.println(populate(0));
         // Parameter = 1 for male name
         // Parameter = 0 for female name
     }
