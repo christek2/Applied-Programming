@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Reader",
+            "request": "launch",
+            "mainClass": "Reader",
+            "projectName": "Applied Programming_dfdf52d2"
+        },
+        {
+            "type": "java",
             "name": "main",
             "request": "launch",
             "mainClass": "main",
