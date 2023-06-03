@@ -1,0 +1,91 @@
+<!-- This is the layout file from the namegenerator project -->
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="60dp"
+    android:minHeight="60dp"
+    tools:context=".MainActivity2">
+
+    <TextView
+        android:id="@+id/resultsView"
+        android:layout_width="385dp"
+        android:layout_height="146dp"
+        android:layout_marginTop="24dp"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/gntButton"
+        android:layout_width="240dp"
+        android:layout_height="164dp"
+        android:text="@string/generate"
+        android:textAllCaps="false"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+    <Switch
+        android:id="@+id/switchGender"
+        android:layout_width="68dp"
+        android:layout_height="91dp"
+        android:height="144dp"
+        android:checked="false"
+        android:switchMinWidth="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/divider2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultsView"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:id="@+id/textMale"
+        android:layout_width="40dp"
+        android:layout_height="65dp"
+        android:text="@string/m"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/divider2"
+        app:layout_constraintEnd_toStartOf="@+id/switchGender"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultsView" />
+
+    <TextView
+        android:id="@+id/textFemale"
+        android:layout_width="40dp"
+        android:layout_height="65dp"
+        android:text="@string/f"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/divider2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toEndOf="@+id/switchGender"
+        app:layout_constraintTop_toBottomOf="@+id/resultsView" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="400dp"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultsView" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="400dp"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="@+id/divider2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/resultsView" />
+</androidx.constraintlayout.widget.ConstraintLayout>
