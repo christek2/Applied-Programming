@@ -22,21 +22,29 @@ int main()
     int randNum = 0;
     int index = 0;
     string removeStr;
+    int repeat = 0;
 
-    srand(time(0));
-    randNum = (rand() % (6 - removeNum));
-    // cout << randNum << endl;
-    for (string choice : greetings) {
-        if (index == randNum) {
-            cout << choice << endl;
-            removeStr = choice;
-            break;
+    while (repeat < 4) {
+
+        index = 0;
+        removeStr;
+
+        srand(time(0));
+        randNum = (rand() % (6 - removeNum));
+        // cout << randNum << endl;
+        for (string choice : greetings) {
+            if (index == randNum) {
+                cout << choice << endl;
+                removeStr = choice;
+                break;
+            }
+            index = index + 1;
         }
-        index = index + 1;
-    }
 
-    greetings.remove(removeStr);
-    removeNum = removeNum + 1;    
+        greetings.remove(removeStr);
+        removeNum = removeNum + 1;
+        repeat = repeat + 1;
+    }
     
     cout << "" << endl;
     for (string i : greetings) {
