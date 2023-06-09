@@ -5,84 +5,67 @@
 #include <cstdlib>
 #include <bits/stdc++.h>
 #include <fstream>
+#include <stdlib.h>
+#include "Letter.cpp"
+#include "Prompt.cpp"
 
 using namespace std;
 
 int main()
 {
-// this block gets the user's input to know how many prompts to produce before the game begins:
-    int promptNum;
-    cout << "How many prompts would you like?" << endl;
-    cout << "> ";
-    cin >> promptNum;
-    cout << endl;
-
-
-// this is the block that finds the random letter:
-    list<string> letters;
-
-    fstream file1;
-    string details1;
-        file1.open("letters.csv", ios::in);
-        for (int j = 1; j<=26; j++) {
-            getline(file1, details1);
-            letters.push_back(details1);
-        }
-
-        srand(time(0));
-        int randNum1 = rand() % 26;
-        int letterIndex = 0;
-
-        for (string b : letters) {
-            if (letterIndex == randNum1){
-                cout << b << endl;
-            }
-            letterIndex = letterIndex + 1;
-        }
-        cout << "" << endl;
-
-
-// now starts the block that will produce the prompts:
-    list<string> prompts;
-
-    fstream file;
-    string details;
-        file.open("prompts.csv", ios::in);
-        for (int i = 1; i<=26; i++) {
-            getline(file, details);
-            prompts.push_back(details);
-        }
-
-    int removeNum = 0;
-    int randNum = 0;
-    int index = 0;
-    string removeStr;
     int repeat = 0;
+    string response;
+    while (repeat == 0) {
 
-    while (repeat < promptNum) {
+    // this block gets the user's input to know how many prompts to produce before the game begins:
+        int promptNum;
+        cout << "How many prompts would you like?" << endl;
+        cout << "> ";
+        cin >> promptNum;
+        cout << endl;
 
-        index = 0;
-        removeStr;
+    // this is the call that will produce the prompts:
+        Prompt prom;
+        prom.getPrompts(promptNum);
 
-        srand(time(0));
-        randNum = (rand() % (26 - removeNum));
-        for (string choice : prompts) {
-            if (index == randNum) {
-                cout << choice << endl;
-                removeStr = choice;
-                break;
+    // this is the call to the class method that finds the random letter:
+        Letter let;
+        let.getLetter();
+
+    // this is the block that decides what to do when the game is over:
+        bool timeUp = true;
+        while (timeUp) {
+            string voidStr;
+            cout << "Press enter when time is up... ";
+            cin >> voidStr;
+            cout << endl;
+
+            bool askForInput = true;
+            while (askForInput) {
+                cout << "Enter 'n' for new letter, 'r' to restart game or 'q' to quit game" << endl;
+                cout << "> ";
+                cin >> response;
+                cout << endl;
+
+                if (response == "n") {
+                    let.getLetter();
+                    askForInput = false;
+                }
+                else if (response == "r") {
+                    main();
+                    askForInput = false;
+                    timeUp = false;
+                    repeat = 1;
+                }
+                else if (response == "q") {
+                    repeat = 1;
+                    askForInput = false;
+                    timeUp = false;
+                }
+                else {
+                    cout << "Invalid response." << endl;
+                }
             }
-            index = index + 1;
         }
-
-        prompts.remove(removeStr);
-        removeNum = removeNum + 1;
-        repeat = repeat + 1;
     }
-    
-    cout << "" << endl;
-
-    // for (string x : prompts) {
-    //     cout << x << endl;
-    // }
 }
