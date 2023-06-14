@@ -11,13 +11,13 @@ using namespace std;
 class Prompt {
     public:
 
-    void getPrompts(int promptNum) {
+    list<string> getPrompts(int promptNum) {
         list<string> prompts;
 
         fstream file;
         string details;
             file.open("prompts.csv", ios::in);
-            for (int i = 1; i<=26; i++) {
+            for (int i = 1; i<=30; i++) {
                 getline(file, details);
                 prompts.push_back(details);
             }
@@ -28,16 +28,18 @@ class Prompt {
         string removeStr;
         int repeat = 0;
 
+        list<string> newPrompts;
+
         while (repeat < promptNum) {
 
             index = 0;
             removeStr;
 
             srand(time(0));
-            randNum = (rand() % (26 - removeNum));
+            randNum = (rand() % (30 - removeNum));
             for (string choice : prompts) {
                 if (index == randNum) {
-                    cout << choice << endl;
+                    newPrompts.push_back(choice);
                     removeStr = choice;
                     break;
                 }
@@ -48,6 +50,6 @@ class Prompt {
             removeNum = removeNum + 1;
             repeat = repeat + 1;
         }
-        cout << endl;
+        return newPrompts;
     }
 };

@@ -24,9 +24,16 @@ int main()
         cin >> promptNum;
         cout << endl;
 
-    // this is the call that will produce the prompts:
+    // this is the block that calls what will produce the prompts:
+        int ind = 1;
+
         Prompt prom;
-        prom.getPrompts(promptNum);
+        list<string> prompts = prom.getPrompts(promptNum);
+        for (string z : prompts) {
+            cout << ind << ". " << z << endl;
+            ind = ind + 1;
+        }
+        cout << endl;
 
     // this is the call to the class method that finds the random letter:
         Letter let;
@@ -36,7 +43,8 @@ int main()
         bool timeUp = true;
         while (timeUp) {
             string voidStr;
-            cout << "Press enter when time is up... ";
+            cout << "Enter 'f' when the time has run out:" << endl;
+            cout << "> ";
             cin >> voidStr;
             cout << endl;
 
@@ -48,6 +56,12 @@ int main()
                 cout << endl;
 
                 if (response == "n") {
+                    ind = 1;
+                    for (string y : prompts) {
+                        cout << ind << ". " << y << endl;
+                        ind = ind + 1;
+                    }
+                    cout << endl;
                     let.getLetter();
                     askForInput = false;
                 }
