@@ -1,14 +1,12 @@
 # Overview
 
-{Important! Do not say in this section that this is college assignment. Talk about what you are trying to accomplish as a software engineer to further your learning.}
-
 The software that I just built is a VERY simple code that allows the user to play a game of Scattergories.
 
 I wanted to practice coding in C++ language, which I've never done before. I like the game Scattergories, and I figured it would be fun to make a program that would just set up the game for you. Sometimes it's a real problem trying to think of good prompts, and it can take a long time to set up the game. Now, I can just press the start button and let the program do all the heavy lifting.
 
 YouTube Demonstration:
 
-[Software Demo Video](http://youtube.link.goes.here)
+[My Scattergories Game in C++](https://youtu.be/6-ASOrvQYMo)
 
 # Development Environment
 
