@@ -25,7 +25,7 @@ int main()
         cout << endl;
 
         int promptNum;
-        cout << "How many prompts would you like?" << endl;
+        cout << "How many prompts would you like (max 60)?" << endl;
         cout << "> ";
         cin >> promptNum;
         cout << endl;

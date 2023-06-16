@@ -2,31 +2,29 @@
 
 {Important! Do not say in this section that this is college assignment. Talk about what you are trying to accomplish as a software engineer to further your learning.}
 
-{Provide a description of the software that you wrote to demonstrate the C++ language.}
+The software that I just built is a VERY simple code that allows the user to play a game of Scattergories.
 
-{Describe your purpose for writing this software.}
+I wanted to practice coding in C++ language, which I've never done before. I like the game Scattergories, and I figured it would be fun to make a program that would just set up the game for you. Sometimes it's a real problem trying to think of good prompts, and it can take a long time to set up the game. Now, I can just press the start button and let the program do all the heavy lifting.
 
-{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running and a walkthrough of the code. Focus should be on sharing what you learned about the language syntax.}
+YouTube Demonstration:
 
 [Software Demo Video](http://youtube.link.goes.here)
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
+I just used Visual Studio Code for my IDE and terminal, and the internet was my main source of information as I researched how to accomplish this task.
 
-{Describe the programming language that you used and any libraries.}
+I just used C++ for this task. No other libraries or languages were needed.
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-
-- [Web Site Name](http://url.link.goes.here)
-- [Web Site Name](http://url.link.goes.here)
+- [Stack Overflow](https://stackoverflow.com/)
+- [W3 Schools](https://www.w3schools.com/)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
+Things to improve:
 
-- Item 1
-- Item 2
-- Item 3
+- Item 1: I need to focus on reusing code better. I'm still relatively new at programming with classes, so my classes are a little underdeveloped and they don't reach their full potential, but I know that if I were to improve on that one thing my code would be much cleaner and more efficient.
+- Item 2: I often find myself using while loops a lot, and I'm pretty sure there are better ways, such as function recursion. In fact, while I was writing this code, I realized that in a certain place I could just recall the function rather than set the boolean variable to false so that the loop wouldn't restart. It made me realize how much harder I work sometimes, when I really don't have to.
+- Item 3: Just like I said above, I find myself working harder than I have to, because I force myself into certain ways of thinking, rather than exploring newer, more efficient methods. There are things that I've shied away from just because I tell myself that it would be too much to learn at my level. But I know that I need to be pushing myself if I'm ever going to reach the next level.
