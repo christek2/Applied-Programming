@@ -18,6 +18,12 @@ int main()
     while (repeat == 0) {
 
     // this block gets the user's input to know how many prompts to produce before the game begins:
+        cout << endl;
+        cout << "Welcome to Scattergories." << endl;
+        cout << endl;
+        cout << "The goal of the game is to think of a word for each prompt that starts with the random letter given. Grab" << endl << "a piece of paper and something to write with. When prompted, choose how many prompts you would like to answer" << endl << "and start a timer for each round. When the timer ends, stop and tally your points for each word you wrote down!" << endl;
+        cout << endl;
+
         int promptNum;
         cout << "How many prompts would you like?" << endl;
         cout << "> ";
@@ -30,7 +36,7 @@ int main()
         Prompt prom;
         list<string> prompts = prom.getPrompts(promptNum);
         for (string z : prompts) {
-            cout << ind << ". " << z << endl;
+            cout << ind << ". " << z << ":" << endl;
             ind = ind + 1;
         }
         cout << endl;
@@ -58,7 +64,7 @@ int main()
                 if (response == "n") {
                     ind = 1;
                     for (string y : prompts) {
-                        cout << ind << ". " << y << endl;
+                        cout << ind << ". " << y << ":" << endl;
                         ind = ind + 1;
                     }
                     cout << endl;

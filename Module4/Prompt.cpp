@@ -17,7 +17,7 @@ class Prompt {
         fstream file;
         string details;
             file.open("prompts.csv", ios::in);
-            for (int i = 1; i<=30; i++) {
+            for (int i = 1; i<=60; i++) {
                 getline(file, details);
                 prompts.push_back(details);
             }
@@ -36,7 +36,7 @@ class Prompt {
             removeStr;
 
             srand(time(0));
-            randNum = (rand() % (30 - removeNum));
+            randNum = (rand() % (60 - removeNum));
             for (string choice : prompts) {
                 if (index == randNum) {
                     newPrompts.push_back(choice);
