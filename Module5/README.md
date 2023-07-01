@@ -1,10 +1,10 @@
 # Overview
 
-{Important!  Do not say in this section that this is college assignment.  Talk about what you are trying to accomplish as a software engineer to further your learning.}
+This program is my first attempt at creating some sort of video game. I have never done this before, but I find myself very interested in that, so I decided to give it a try!
 
-{Provide a description the game that you wrote. Describe how to play your game.}
+My game is very simple, and the the goal is to destroy all the zombies that appear on the screen. You can run around them with the arrow keys, and aim/shoot with the mouse.
 
-{Describe your purpose for writing this software.}
+The purpose of this, as I said, was to try and create my own video game because this is one of the most interesting areas of programming for me. I can see myself getting into this more, after looking through python arcade and really getting comfortable with it.
 
 {Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the game being played and a walkthrough of the code.}
 
@@ -12,19 +12,15 @@
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
+All I used for this project was python, the arcade libraries, and the internet. VSC made it really easy to debug and edit my code as I worked.
 
-{Describe the programming language that you used and any libraries.}
+Arcade, math, and random libraries were used. They had everything I needed to create the various elements of this simple game.
 
 # Useful Websites
-
-{Make a list of websites that you found helpful in this project}
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+* [Python Arcade](https://api.arcade.academy/en/latest/examples/index.html)
+* [Geeks for Geeks](https://www.geeksforgeeks.org/)
 
 # Future Work
-
-{Make a list of things that you need to fix, improve, and add in the future.}
-* Item 1
-* Item 2
-* Item 3
+* I need to be better at debugging the issues I find in my code. Sometimes I'll write something and then create an incidental error, and I tell myself that I'm going to go back to it later. Sometimes I don't, and the errors pile up, and I can't untangle the mess I've made.
+* I also need to be better at planning and designing before I sit down to write my code. This makes it so much easier to edit and come back to, in the case that I want to build to it at some later date.
+* Lastly, as usualy, I'm not as good as researching as I wish I was. There are a lot of resources out there that can help me, but I often find myself trying to figure these things out myself, and then I get confused, waste my time, and then end up having to return to the internet anyway.
