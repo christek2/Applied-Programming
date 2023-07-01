@@ -8,7 +8,7 @@ The purpose of this, as I said, was to try and create my own video game because 
 
 {Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the game being played and a walkthrough of the code.}
 
-[Software Demo Video](http://youtube.link.goes.here)
+[My First Attempt at Programming a Game](https://youtu.be/1ZZB6aWr8Qg)
 
 # Development Environment
 
