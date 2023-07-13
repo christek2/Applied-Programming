@@ -16,14 +16,10 @@ I used R to create this program, with the library 'dplyr'.
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-
 - [Tutorials Point](https://www.tutorialspoint.com/index.htm)
 - [Geeks for Geeks](https://www.geeksforgeeks.org/)
 
 # Future Work
-
-{Make a list of things that you need to fix, improve, and add in the future.}
 
 - Item 1: I need to research the principles of the language better.
 - Item 2: I need to focus on making my code more like a user-friendly software: seamless, easy, informative.
